@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lorrane Ribeiro Nail Beauty — Sobradinho-DF</title>
+  <meta name="description" content="Unhas impecáveis em Sobradinho-DF. Alongamento, esmaltação em gel, banho de gel e blindagem. Agende pelo WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:  #0e2a38;
+      --teal:  #1a4a5c;
+      --gold:  #c9a050;
+      --gold2: #e8c27a;
+      --white: #ffffff;
+      --off:   #f6f7f5;
+      --text:  #1c2b35;
+      --muted: #5a7080;
+      --radius: 14px;
+      --shadow: 0 8px 32px rgba(14,42,56,.13);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.25;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: 92%;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section { padding: 96px 0; }
+    .section--alt { background: var(--off); }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .gold-line {
+      width: 56px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      border-radius: 2px;
+      margin: 20px 0 36px;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      transition: background .3s, box-shadow .3s;
+    }
+
+    .nav.scrolled {
+      background: rgba(14,42,56,.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,.25);
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .nav__logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--white);
+      letter-spacing: .5px;
+    }
+
+    .nav__logo span { color: var(--gold2); }
+
+    .nav__links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav__links a {
+      color: rgba(255,255,255,.82);
+      font-size: 15px;
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .nav__links a:hover { color: var(--gold2); }
+
+    .nav__cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: var(--navy) !important;
+      font-weight: 700 !important;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 14px !important;
+      transition: transform .2s, box-shadow .2s !important;
+    }
+
+    .nav__cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201,160,80,.4);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      width: 26px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all .3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 60%, #1d5a72 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 800px 600px at 75% 40%, rgba(201,160,80,.08) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 400px at 20% 80%, rgba(201,160,80,.05) 0%, transparent 60%);
+    }
+
+    /* decorative circles */
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,160,80,.15);
+      right: -80px; top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .hero__deco {
+      position: absolute;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,160,80,.1);
+      right: 60px; top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      padding: 120px 0 80px;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,160,80,.15);
+      border: 1px solid rgba(201,160,80,.3);
+      color: var(--gold2);
+      padding: 7px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero__badge::before { content: '✦'; font-size: 10px; }
+
+    .hero__title {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .hero__title span {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero__slogan {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: rgba(255,255,255,.65);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+
+    .hero__desc {
+      font-size: 18px;
+      color: rgba(255,255,255,.8);
+      max-width: 520px;
+      margin-bottom: 44px;
+      line-height: 1.75;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 34px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all .25s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn--gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: var(--navy);
+      box-shadow: 0 8px 28px rgba(201,160,80,.35);
+    }
+
+    .btn--gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(201,160,80,.45);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,.35);
+    }
+
+    .btn--outline:hover {
+      border-color: var(--gold2);
+      color: var(--gold2);
+      transform: translateY(-3px);
+    }
+
+    .hero__info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+
+    .hero__info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,.75);
+      font-size: 15px;
+    }
+
+    .hero__info-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: rgba(201,160,80,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ── ABOUT ── */
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about__img-wrap {
+      position: relative;
+    }
+
+    .about__img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(145deg, var(--teal), var(--navy));
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about__img-placeholder {
+      text-align: center;
+      color: rgba(255,255,255,.5);
+    }
+
+    .about__img-placeholder svg { margin: 0 auto 12px; opacity: .4; }
+
+    .about__img-placeholder p { font-size: 14px; }
+
+    .about__badge {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: var(--navy);
+      padding: 20px 26px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .about__badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .about__badge-txt { font-size: 12px; font-weight: 600; margin-top: 4px; }
+
+    .about__values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .about__value {
+      background: var(--off);
+      border-radius: var(--radius);
+      padding: 20px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .about__value h4 {
+      font-size: 15px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .about__value p { font-size: 13px; color: var(--muted); }
+
+    /* ── SERVICES ── */
+    .services__intro {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 56px;
+    }
+
+    .services__intro .gold-line { margin: 20px auto 0; }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px;
+      border: 1px solid rgba(14,42,56,.08);
+      box-shadow: 0 4px 24px rgba(14,42,56,.07);
+      transition: transform .25s, box-shadow .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      opacity: 0;
+      transition: opacity .25s;
+    }
+
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-card__icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .service-card__name {
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .service-card__desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      min-height: 48px;
+    }
+
+    .service-card__footer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-top: 20px;
+      border-top: 1px solid rgba(14,42,56,.08);
+    }
+
+    .service-card__price {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .service-card__price sup {
+      font-size: 16px;
+      font-weight: 600;
+      vertical-align: super;
+    }
+
+    .service-card__price-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .service-card__time {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      color: var(--muted);
+      background: var(--off);
+      padding: 6px 12px;
+      border-radius: 50px;
+    }
+
+    /* highlight card */
+    .service-card--highlight {
+      background: linear-gradient(145deg, var(--navy), var(--teal));
+      color: var(--white);
+      border-color: transparent;
+    }
+
+    .service-card--highlight .service-card__name,
+    .service-card--highlight .service-card__price { color: var(--white); }
+
+    .service-card--highlight .service-card__desc { color: rgba(255,255,255,.65); }
+
+    .service-card--highlight .service-card__footer { border-top-color: rgba(255,255,255,.12); }
+
+    .service-card--highlight .service-card__time {
+      background: rgba(255,255,255,.1);
+      color: rgba(255,255,255,.75);
+    }
+
+    .service-card--highlight::before { opacity: 1; }
+
+    /* ── POLICIES ── */
+    .policies__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .policy-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 28px;
+      border: 1px solid rgba(14,42,56,.07);
+      display: flex;
+      gap: 16px;
+    }
+
+    .policy-card__icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, rgba(201,160,80,.12), rgba(232,194,122,.08));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .policy-card h4 {
+      font-size: 16px;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .policy-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .return-rules {
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      border-radius: 20px;
+      padding: 36px 40px;
+      color: var(--white);
+    }
+
+    .return-rules h3 {
+      font-size: 22px;
+      color: var(--gold2);
+      margin-bottom: 24px;
+    }
+
+    .return-rules__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .return-rule {
+      background: rgba(255,255,255,.07);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .return-rule h4 {
+      font-size: 14px;
+      color: var(--gold2);
+      margin-bottom: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+
+    .return-rule p { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.6; }
+
+    /* ── BOOKING ── */
+    .booking {
+      background: linear-gradient(135deg, var(--navy) 0%, #0b3347 50%, var(--teal) 100%);
+      padding: 96px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .booking::before {
+      content: '💅';
+      position: absolute;
+      font-size: 300px;
+      right: -40px; top: -60px;
+      opacity: .04;
+      line-height: 1;
+    }
+
+    .booking__inner {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .booking__title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .booking__title span {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .booking__desc {
+      font-size: 18px;
+      color: rgba(255,255,255,.7);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.75;
+    }
+
+    .booking__steps {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin-bottom: 52px;
+    }
+
+    .booking__step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 32px;
+      position: relative;
+    }
+
+    .booking__step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 22px;
+      width: 1px; height: 24px;
+      background: rgba(255,255,255,.15);
+    }
+
+    .booking__step-num {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .booking__step-label {
+      font-size: 14px;
+      color: rgba(255,255,255,.75);
+      max-width: 120px;
+      line-height: 1.4;
+    }
+
+    .booking__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .booking__note {
+      font-size: 13px;
+      color: rgba(255,255,255,.45);
+    }
+
+    .booking__note strong { color: var(--gold2); }
+
+    /* ── HOURS ── */
+    .hours__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .hours__table {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hours__table-head {
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      color: var(--white);
+      padding: 24px 28px;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+    }
+
+    .hours__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--off);
+      font-size: 15px;
+    }
+
+    .hours__row:last-child { border-bottom: none; }
+
+    .hours__row--open .hours__status { color: #2a9d50; font-weight: 600; }
+    .hours__row--closed .hours__day { color: var(--muted); }
+    .hours__row--closed .hours__status { color: #e05252; font-weight: 600; }
+
+    .hours__info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hours__info-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 24px 28px;
+      border: 1px solid rgba(14,42,56,.08);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .hours__info-card__icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .hours__info-card h4 {
+      font-size: 15px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .hours__info-card p { font-size: 14px; color: var(--muted); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px;
+      border: 1px solid rgba(14,42,56,.07);
+      box-shadow: 0 4px 20px rgba(14,42,56,.06);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px; right: 24px;
+      font-family: 'Playfair Display', serif;
+      font-size: 80px;
+      color: var(--gold);
+      opacity: .15;
+      line-height: 1;
+    }
+
+    .testimonial-card__stars {
+      color: var(--gold);
+      font-size: 18px;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-card__text {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-card__author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-card__avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .testimonial-card__name { font-weight: 600; font-size: 15px; color: var(--navy); }
+    .testimonial-card__via { font-size: 12px; color: var(--muted); }
+
+    /* ── SOCIAL ── */
+    .social__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .social-card {
+      border-radius: 18px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      text-decoration: none;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .social-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+    .social-card--ig {
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #f77737);
+      color: var(--white);
+    }
+
+    .social-card--tt {
+      background: #010101;
+      color: var(--white);
+    }
+
+    .social-card--fb {
+      background: #1877f2;
+      color: var(--white);
+    }
+
+    .social-card--wa {
+      background: #25d366;
+      color: var(--white);
+    }
+
+    .social-card__icon { font-size: 32px; flex-shrink: 0; }
+
+    .social-card__label { font-size: 12px; opacity: .8; }
+    .social-card__handle { font-weight: 700; font-size: 17px; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.65);
+      padding: 60px 0 32px;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer__brand h3 {
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .footer__brand h3 span { color: var(--gold2); }
+
+    .footer__brand p { font-size: 14px; line-height: 1.75; max-width: 280px; }
+
+    .footer__col h4 {
+      font-size: 14px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .footer__col ul { list-style: none; }
+
+    .footer__col ul li { margin-bottom: 10px; }
+
+    .footer__col ul a {
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+      transition: color .2s;
+    }
+
+    .footer__col ul a:hover { color: var(--gold2); }
+
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+    }
+
+    .footer__bottom a { color: var(--gold2); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #25d366;
+      color: var(--white);
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 8px 28px rgba(37,211,102,.4);
+      transition: all .25s;
+      cursor: pointer;
+    }
+
+    .wa-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(37,211,102,.5);
+    }
+
+    .wa-float__icon { font-size: 22px; }
+
+    /* ── MOBILE NAV ── */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .nav__links {
+        position: fixed;
+        inset: 0; top: 0;
+        background: rgba(14,42,56,.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        font-size: 22px;
+        transform: translateX(100%);
+        transition: transform .35s ease;
+        z-index: 99;
+      }
+
+      .nav__links.open { transform: translateX(0); }
+
+      .nav__links a { font-size: 20px !important; }
+
+      .nav__cta { padding: 14px 32px !important; font-size: 18px !important; }
+
+      /* hero */
+      .hero__content { padding: 100px 0 60px; }
+      .hero::after, .hero__deco { display: none; }
+
+      /* about */
+      .about__grid { grid-template-columns: 1fr; gap: 40px; }
+      .about__values { grid-template-columns: 1fr; }
+      .about__badge { right: 0; }
+
+      /* hours */
+      .hours__grid { grid-template-columns: 1fr; }
+
+      /* footer */
+      .footer__grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer__bottom { flex-direction: column; text-align: center; }
+
+      /* booking steps */
+      .booking__step:not(:last-child)::after { display: none; }
+      .booking__steps { gap: 24px; }
+
+      /* wa float */
+      .wa-float__text { display: none; }
+      .wa-float { padding: 16px; border-radius: 50%; }
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── UTILITY ── */
+    .text-center { text-align: center; }
+    .mt-8 { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════ NAV -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#inicio" class="nav__logo">Lorrane Ribeiro <span>Nail Beauty</span></a>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#politicas">Políticas</a></li>
+          <li><a href="#horarios">Horários</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="https://wa.me/5561994369704?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" class="nav__cta">Agendar 💅</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════ HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__deco"></div>
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__badge">Sobradinho · Brasília-DF</div>
+        <h1 class="hero__title">
+          Lorrane Ribeiro<br /><span>Nail Beauty</span>
+        </h1>
+        <p class="hero__slogan">"A arte do cuidado, a essência da durabilidade."</p>
+        <p class="hero__desc">
+          Unhas impecáveis realizadas com amor, dedicação e cuidado. Uma experiência exclusiva para mulheres que valorizam detalhes, resultados e bem-estar.
+        </p>
+        <div class="hero__actions">
+          <a href="https://wa.me/5561994369704?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" class="btn btn--gold">
+            💬 Agendar pelo WhatsApp
+          </a>
+          <a href="#servicos" class="btn btn--outline">Ver serviços</a>
+        </div>
+        <div class="hero__info">
+          <div class="hero__info-item">
+            <div class="hero__info-icon">📍</div>
+            <div>Sobradinho · DF<br /><span style="font-size:13px;opacity:.7">Sala própria em estúdio</span></div>
+          </div>
+          <div class="hero__info-item">
+            <div class="hero__info-icon">🕐</div>
+            <div>Ter a Sáb · 08h–18h<br /><span style="font-size:13px;opacity:.7">Somente hora marcada</span></div>
+          </div>
+          <div class="hero__info-item">
+            <div class="hero__info-icon">✦</div>
+            <div>Atendimento exclusivo<br /><span style="font-size:13px;opacity:.7">Atenção e cuidado em cada detalhe</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ SOBRE -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__img-wrap reveal">
+          <div class="about__img">
+            <!-- Substitua pela foto profissional -->
+            <div class="about__img-placeholder">
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                <circle cx="40" cy="30" r="18" fill="rgba(255,255,255,.3)"/>
+                <path d="M10 70c0-16.57 13.43-30 30-30s30 13.43 30 30" fill="rgba(255,255,255,.15)"/>
+              </svg>
+              <p>Adicione sua foto aqui</p>
+            </div>
+          </div>
+          <div class="about__badge">
+            <div class="about__badge-num">💅</div>
+            <div class="about__badge-txt">Com amor &amp;<br/>dedicação</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="section-label">Sobre mim</div>
+          <h2 class="section-title">Unhas que<br />transformam</h2>
+          <div class="gold-line"></div>
+          <p style="color:var(--muted);margin-bottom:16px;font-size:17px;">
+            Meu trabalho vai além da beleza: é sobre devolver autoestima e bem-estar através de unhas impecáveis. Atendo em sala própria em um estúdio em Sobradinho-DF, com um atendimento exclusivo e humanizado.
+          </p>
+          <p style="color:var(--muted);font-size:17px;">
+            Minha proposta é exclusiva para clientes que valorizam os detalhes, o resultado, a durabilidade e o propósito de servir mulheres tornando especial cada momento compartilhado.
+          </p>
+          <div class="about__values">
+            <div class="about__value">
+              <h4>💎 Qualidade</h4>
+              <p>Materiais premium e técnica apurada em cada atendimento.</p>
+            </div>
+            <div class="about__value">
+              <h4>💛 Cuidado</h4>
+              <p>Cutilagem inclusa em todos os procedimentos.</p>
+            </div>
+            <div class="about__value">
+              <h4>⏳ Durabilidade</h4>
+              <p>Produtos e técnicas para unhas que duram de verdade.</p>
+            </div>
+            <div class="about__value">
+              <h4>🌸 Exclusividade</h4>
+              <p>Atendimento personalizado, hora marcada, só para você.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ SERVIÇOS -->
+  <section class="section section--alt" id="servicos">
+    <div class="container">
+      <div class="services__intro reveal">
+        <div class="section-label">Serviços &amp; Preços</div>
+        <h2 class="section-title">O que ofereço</h2>
+        <p class="section-subtitle" style="margin:0 auto">Cada serviço inclui cutilagem (30–40 min) e é realizado com dedicação total à saúde e beleza das suas unhas.</p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="services__grid">
+
+        <!-- Aplicação com esmaltação em gel -->
+        <div class="service-card service-card--highlight reveal">
+          <div class="service-card__icon">✨</div>
+          <div class="service-card__name">Aplicação com Esmaltação em Gel</div>
+          <div class="service-card__desc">Alongamento completo com esmaltação em gel de alta durabilidade. A escolha mais completa!</div>
+          <div class="service-card__footer">
+            <div>
+              <div class="service-card__price"><sup>R$</sup>190</div>
+              <div class="service-card__price-note">Aplicação completa</div>
+            </div>
+            <div class="service-card__time">⏱ ~2h40</div>
+          </div>
+        </div>
+
+        <!-- Manutenção com esmaltação -->
+        <div class="service-card reveal">
+          <div class="service-card__icon">🔄</div>
+          <div class="service-card__name">Manutenção com Esmaltação em Gel</div>
+          <div class="service-card__desc">Manutenção do alongamento com esmaltação em gel. Prazo: até 25 dias.</div>
+          <div class="service-card__footer">
+            <div>
+              <div class="service-card__price"><sup>R$</sup>160</div>
+              <div class="service-card__price-note">Manutenção</div>
+            </div>
+            <div class="service-card__time">⏱ ~2h30</div>
+          </div>
+        </div>
+
+        <!-- Aplicação natural -->
+        <div class="service-card reveal">
+          <div class="service-card__icon">🌿</div>
+          <div class="service-card__name">Aplicação Natural</div>
+          <div class="service-card__desc">Sem esmaltação, finalizado com top coat. Variedades do mercado disponíveis.</div>
+          <div class="service-card__footer">
+            <div>
+              <div class="service-card__price"><sup>R$</sup>160</div>
+              <div class="service-card__price-note">Aplicação</div>
+            </div>
+            <div class="service-card__time">⏱ ~2h</div>
+          </div>
+        </div>
+
+        <!-- Manutenção natural -->
+        <div class="service-card reveal">
+          <div class="service-card__icon">🍃</div>
+          <div class="service-card__name">Manutenção Natural</div>
+          <div class="service-card__desc">Manutenção sem esmaltação, finalizado com top coat. Prazo: até 25 dias.</div>
+          <div class="service-card__footer">
+            <div>
+              <div class="service-card__price"><sup>R$</sup>130</div>
+              <div class="service-card__price-note">Manutenção</div>
+            </div>
+            <div class="service-card__time">⏱ ~2h</div>
+          </div>
+        </div>
+
+        <!-- Banho de gel + esmaltação -->
+        <div class="service-card reveal">
+          <div class="service-card__icon">💧</div>
+          <div class="service-card__name">Banho de Gel + Esmaltação</div>
+          <div class="service-card__desc">Blindagem estruturada com opção de esmaltação em gel. Prazo manutenção: 3 semanas.</div>
+          <div class="service-card__footer">
+            <div>
+              <div class="service-card__price"><sup>R$</sup>110</div>
+              <div class="service-card__price-note">Curtas/médias · R$125 longas</div>
+            </div>
+            <div class="service-card__time">⏱ ~1h40–2h</div>
+          </div>
+        </div>
+
+        <!-- Manutenção banho de gel -->
+        <div class="service-card reveal">
+          <div class="service-card__icon">🔁</div>
+          <div class="service-card__name">Manutenção Banho de Gel</div>
+          <div class="service-card__desc">Com esmaltação em gel (~2h30) ou sem esmaltação (~2h). Prazo: até 25 dias.</div>
+          <div class="service-card__footer">
+            <div>
+              <div class="service-card__price"><sup>R$</sup>—</div>
+              <div class="service-card__price-note">Consulte ao agendar</div>
+            </div>
+            <div class="service-card__time">⏱ ~2h–2h30</div>
+          </div>
+        </div>
+
+        <!-- Remoção -->
+        <div class="service-card reveal">
+          <div class="service-card__icon">🧹</div>
+          <div class="service-card__name">Remoção</div>
+          <div class="service-card__desc">Sem nova aplicação. Remoção de outra profissional com nova aplicação: R$20 adicional.</div>
+          <div class="service-card__footer">
+            <div>
+              <div class="service-card__price"><sup>R$</sup>50</div>
+              <div class="service-card__price-note">Sem nova aplicação</div>
+            </div>
+            <div class="service-card__time">⏱ ~30min</div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center mt-16" style="color:var(--muted);font-size:14px;margin-top:32px;">
+        ✦ Cutilagem (30–40 min) inclusa em todos os procedimentos · ✦ Preços em Reais (R$)
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ POLÍTICAS -->
+  <section class="section" id="politicas">
+    <div class="container">
+      <div class="reveal" style="max-width:620px;margin-bottom:56px;">
+        <div class="section-label">Políticas de Atendimento</div>
+        <h2 class="section-title">Importante saber antes de agendar</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="policies__grid">
+        <div class="policy-card reveal">
+          <div class="policy-card__icon">💳</div>
+          <div>
+            <h4>Sinal de Agendamento</h4>
+            <p>R$50 no ato do agendamento para confirmar o seu horário.</p>
+          </div>
+        </div>
+        <div class="policy-card reveal">
+          <div class="policy-card__icon">❌</div>
+          <div>
+            <h4>Taxa de Cancelamento</h4>
+            <p>R$50 em casos de cancelamento em até 24 horas antes do horário agendado.</p>
+          </div>
+        </div>
+        <div class="policy-card reveal">
+          <div class="policy-card__icon">⚠️</div>
+          <div>
+            <h4>Unha Descola ou Quebra</h4>
+            <p>Quando a unha descola ou quebra, é necessário refazer o procedimento imediatamente para não comprometer a lâmina da unha natural.</p>
+          </div>
+        </div>
+        <div class="policy-card reveal">
+          <div class="policy-card__icon">📋</div>
+          <div>
+            <h4>Somente Hora Marcada</h4>
+            <p>Atendimento exclusivamente com hora marcada. Em breve: lista de espera para vagas liberadas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="return-rules reveal">
+        <h3>⏰ Prazos de Retorno para Manutenção</h3>
+        <div class="return-rules__grid">
+          <div class="return-rule">
+            <h4>Alongamento</h4>
+            <p>Até <strong>4 semanas</strong> (máx. 25 dias). Acima de 30 dias: + R$20 pela perda de material.</p>
+          </div>
+          <div class="return-rule">
+            <h4>Banho de Gel</h4>
+            <p>Até <strong>3 semanas</strong> (máx. 25 dias). Acima de 30 dias: + R$20 pela perda de material.</p>
+          </div>
+          <div class="return-rule">
+            <h4>Esmaltação em Gel</h4>
+            <p>Até <strong>3 semanas</strong> (máx. 21 dias). Acima de 25 dias: + R$20 pela perda de material.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ AGENDAMENTO -->
+  <section class="booking" id="agendamento">
+    <div class="container">
+      <div class="booking__inner">
+        <div class="section-label" style="color:var(--gold2);">Agendamento</div>
+        <h2 class="booking__title">Pronta para unhas <span>impecáveis?</span></h2>
+        <p class="booking__desc">O agendamento é simples e rápido. Escolha o serviço e me chame no WhatsApp para confirmarmos o seu horário.</p>
+
+        <div class="booking__steps">
+          <div class="booking__step">
+            <div class="booking__step-num">1</div>
+            <div class="booking__step-label">Escolha o serviço desejado</div>
+          </div>
+          <div class="booking__step">
+            <div class="booking__step-num">2</div>
+            <div class="booking__step-label">Clique em "Agendar" e vá para o WhatsApp</div>
+          </div>
+          <div class="booking__step">
+            <div class="booking__step-num">3</div>
+            <div class="booking__step-label">Confirmamos o horário e o sinal de R$50</div>
+          </div>
+          <div class="booking__step">
+            <div class="booking__step-num">4</div>
+            <div class="booking__step-num" style="background:var(--teal);color:var(--gold2);font-size:22px;width:46px;height:46px;">💅</div>
+            <div class="booking__step-label">Aproveite o seu momento especial!</div>
+          </div>
+        </div>
+
+        <div class="booking__actions">
+          <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Gostaria%20de%20agendar%20um%20horário.%20Poderia%20me%20informar%20a%20disponibilidade%3F" target="_blank" class="btn btn--gold" style="font-size:18px;padding:20px 44px;">
+            💬 Agendar pelo WhatsApp
+          </a>
+          <p class="booking__note">
+            📱 (61) 9 9436-9704 · <strong>Terça a Sábado, 08h–18h</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ HORÁRIOS -->
+  <section class="section section--alt" id="horarios">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:48px;">
+        <div class="section-label">Horários</div>
+        <h2 class="section-title">Dias de atendimento</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="hours__grid">
+        <div class="hours__table reveal">
+          <div class="hours__table-head">🗓 Agenda semanal</div>
+          <div class="hours__row hours__row--closed">
+            <span class="hours__day">Segunda-feira</span>
+            <span class="hours__status">Fechado</span>
+          </div>
+          <div class="hours__row hours__row--open">
+            <span class="hours__day">Terça-feira</span>
+            <span class="hours__status">08:00 – 18:00</span>
+          </div>
+          <div class="hours__row hours__row--open">
+            <span class="hours__day">Quarta-feira</span>
+            <span class="hours__status">08:00 – 18:00</span>
+          </div>
+          <div class="hours__row hours__row--open">
+            <span class="hours__day">Quinta-feira</span>
+            <span class="hours__status">08:00 – 18:00</span>
+          </div>
+          <div class="hours__row hours__row--open">
+            <span class="hours__day">Sexta-feira</span>
+            <span class="hours__status">08:00 – 18:00</span>
+          </div>
+          <div class="hours__row hours__row--open">
+            <span class="hours__day">Sábado</span>
+            <span class="hours__status">08:00 – 18:00</span>
+          </div>
+          <div class="hours__row hours__row--closed">
+            <span class="hours__day">Domingo</span>
+            <span class="hours__status">Fechado</span>
+          </div>
+        </div>
+
+        <div class="hours__info reveal">
+          <div class="hours__info-card">
+            <div class="hours__info-card__icon">📍</div>
+            <div>
+              <h4>Localização</h4>
+              <p>Sala própria em estúdio em <strong>Sobradinho · Brasília-DF</strong>. Endereço completo enviado ao confirmar o agendamento.</p>
+            </div>
+          </div>
+          <div class="hours__info-card">
+            <div class="hours__info-card__icon">📅</div>
+            <div>
+              <h4>Somente hora marcada</h4>
+              <p>Não atendo por ordem de chegada. Agende com antecedência para garantir o seu horário.</p>
+            </div>
+          </div>
+          <div class="hours__info-card">
+            <div class="hours__info-card__icon">🔔</div>
+            <div>
+              <h4>Lista de espera</h4>
+              <p>Quando a agenda estiver cheia, poderá entrar na lista de espera e será avisada assim que surgir disponibilidade.</p>
+            </div>
+          </div>
+          <div class="hours__info-card">
+            <div class="hours__info-card__icon">💬</div>
+            <div>
+              <h4>Contato direto</h4>
+              <p>WhatsApp: <a href="https://wa.me/5561994369704" target="_blank" style="color:var(--teal);font-weight:600;">(61) 9 9436-9704</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ DEPOIMENTOS -->
+  <section class="section" id="depoimentos">
+    <div class="container">
+      <div class="services__intro reveal">
+        <div class="section-label">Depoimentos</div>
+        <h2 class="section-title">O que minhas clientes dizem</h2>
+        <p class="section-subtitle" style="margin:0 auto;">Feedbacks reais de quem já viveu a experiência Lorrane Ribeiro Nail Beauty.</p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="testimonials__grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">"Minhas unhas nunca ficaram tão lindas e duradouras! O atendimento da Lorrane é incrível, muito cuidadoso e atencioso. Me sinto especial em cada visita."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">C</div>
+            <div>
+              <div class="testimonial-card__name">Cliente via WhatsApp</div>
+              <div class="testimonial-card__via">⭐ Feedback verificado</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">"Adorei o resultado! As unhas ficaram impecáveis e duraram muito mais do que eu esperava. Super recomendo a Lorrane para quem quer qualidade de verdade."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">A</div>
+            <div>
+              <div class="testimonial-card__name">Cliente via WhatsApp</div>
+              <div class="testimonial-card__via">⭐ Feedback verificado</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">"O ambiente é lindo, o atendimento é exclusivo e o resultado é sempre perfeito. Não troco por nada! Cada sessão é um momento de autocuidado."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">M</div>
+            <div>
+              <div class="testimonial-card__name">Cliente via WhatsApp</div>
+              <div class="testimonial-card__via">⭐ Feedback verificado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top:48px;">
+        <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" class="btn btn--gold">
+          💬 Quero agendar meu horário
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ REDES SOCIAIS -->
+  <section class="section section--alt" id="redes">
+    <div class="container">
+      <div class="services__intro reveal">
+        <div class="section-label">Redes Sociais</div>
+        <h2 class="section-title">Me acompanhe</h2>
+        <p class="section-subtitle" style="margin:0 auto;">Veja os trabalhos mais recentes, dicas e novidades nas redes sociais!</p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="social__grid reveal">
+        <a href="https://www.instagram.com/lorraneribeironailbeauty" target="_blank" class="social-card social-card--ig">
+          <div class="social-card__icon">📸</div>
+          <div>
+            <div class="social-card__label">Instagram</div>
+            <div class="social-card__handle">@lorraneribeironailbeauty</div>
+          </div>
+        </a>
+        <a href="https://www.tiktok.com/@lorraneribeiro_" target="_blank" class="social-card social-card--tt">
+          <div class="social-card__icon">🎵</div>
+          <div>
+            <div class="social-card__label">TikTok</div>
+            <div class="social-card__handle">@lorraneribeiro_</div>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/LorraneRibeiro" target="_blank" class="social-card social-card--fb">
+          <div class="social-card__icon">👤</div>
+          <div>
+            <div class="social-card__label">Facebook</div>
+            <div class="social-card__handle">Lorrane Ribeiro</div>
+          </div>
+        </a>
+        <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" class="social-card social-card--wa">
+          <div class="social-card__icon">💬</div>
+          <div>
+            <div class="social-card__label">WhatsApp · Agendamentos</div>
+            <div class="social-card__handle">(61) 9 9436-9704</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>Lorrane Ribeiro <span>Nail Beauty</span></h3>
+          <p style="font-style:italic;margin:8px 0 16px;color:rgba(255,255,255,.5);">"A arte do cuidado, a essência da durabilidade."</p>
+          <p>Sala própria em estúdio em Sobradinho · Brasília-DF. Atendimento exclusivo com hora marcada para quem valoriza qualidade e cuidado.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#servicos">Aplicação com Gel</a></li>
+            <li><a href="#servicos">Manutenção</a></li>
+            <li><a href="#servicos">Banho de Gel</a></li>
+            <li><a href="#servicos">Natural</a></li>
+            <li><a href="#servicos">Remoção</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="https://wa.me/5561994369704" target="_blank">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/lorraneribeironailbeauty" target="_blank">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@lorraneribeiro_" target="_blank">TikTok</a></li>
+            <li><a href="https://www.facebook.com/LorraneRibeiro" target="_blank">Facebook</a></li>
+          </ul>
+          <div style="margin-top:24px;font-size:13px;">
+            <div>📅 Ter–Sáb · 08h–18h</div>
+            <div style="margin-top:6px;">📍 Sobradinho · DF</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2024 Lorrane Ribeiro Nail Beauty · Todos os direitos reservados.</span>
+        <span>Feito com 💛 em Sobradinho-DF</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════ WHATSAPP FLOAT -->
+  <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Gostaria%20de%20agendar%20um%20horário.%20Poderia%20me%20informar%20a%20disponibilidade%3F" target="_blank" class="wa-float" id="waFloat">
+    <span class="wa-float__icon">💬</span>
+    <span class="wa-float__text">Agendar agora</span>
+  </a>
+
+  <!-- ═══════════════════════════════════════ JS -->
+  <script>
+    // ── Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ── Mobile menu
+    function toggleMenu() {
+      const links = document.getElementById('navLinks');
+      links.classList.toggle('open');
+    }
+
+    document.getElementById('navLinks').querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // ── Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
