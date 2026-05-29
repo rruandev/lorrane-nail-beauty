@@ -403,6 +403,29 @@
     .testimonials-cta__text p { font-size: 14px; color: var(--muted); font-weight: 300; }
     .wa-btn svg { width: 24px; height: 24px; }
 
+    /* ── PROTEÇÃO ───────────────────────────────────── */
+    img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+    .gallery-item, .wa-btn, a, button { pointer-events: all; }
+    ::selection { background: transparent; }
+    ::-moz-selection { background: transparent; }
+    .section-title, .manifesto__quote, .manifesto__text, .t-card__text,
+    .service-item__name, .booking__title, p, h1, h2, h3, h4 {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    /* toast de aviso */
+    #protectMsg {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px);
+      z-index: 9999; background: var(--navy); color: rgba(255,255,255,.75);
+      font-size: 13px; font-weight: 300; padding: 14px 24px; border-radius: 2px;
+      border: 1px solid rgba(184,146,90,.3); white-space: nowrap;
+      transition: transform .35s var(--ease), opacity .35s;
+      opacity: 0; pointer-events: none;
+    }
+    #protectMsg.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
     /* ── SCROLL REVEAL ──────────────────────────────── */
     .sr { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
     .sr.d1 { transition-delay: .1s; } .sr.d2 { transition-delay: .2s; } .sr.d3 { transition-delay: .3s; } .sr.d4 { transition-delay: .4s; }
@@ -948,6 +971,9 @@
     </div>
   </footer>
 
+  <!-- PROTECT TOAST -->
+  <div id="protectMsg">© Lorrane Ribeiro Nail Beauty — conteúdo protegido</div>
+
   <!-- STICKY BAR MOBILE -->
   <div class="sticky-bar" id="stickyBar">
     <div class="sticky-bar__text">
@@ -963,6 +989,52 @@
   </a>
 
   <script>
+    // ── PROTEÇÃO DE CONTEÚDO ─────────────────────────
+    // Bloqueia clique direito
+    document.addEventListener('contextmenu', e => {
+      e.preventDefault();
+      showProtectMsg();
+    });
+
+    // Bloqueia atalhos de teclado para copiar/salvar/inspecionar
+    document.addEventListener('keydown', e => {
+      const blocked =
+        (e.ctrlKey && ['u','s','a','c','p'].includes(e.key.toLowerCase())) || // Ctrl+U/S/A/C/P
+        (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase())) || // Ctrl+Shift+I/J/C
+        e.key === 'F12';
+      if (blocked) {
+        e.preventDefault();
+        if (e.key.toLowerCase() === 'u' || e.key === 'F12' ||
+            (e.shiftKey && ['i','j'].includes(e.key.toLowerCase()))) {
+          showProtectMsg();
+        }
+      }
+    });
+
+    // Bloqueia arrastar imagens
+    document.querySelectorAll('img').forEach(img => {
+      img.setAttribute('draggable', 'false');
+      img.addEventListener('dragstart', e => e.preventDefault());
+    });
+
+    // Detecta se DevTools abriu (fica verificando tamanho da janela)
+    let devtoolsOpen = false;
+    setInterval(() => {
+      const threshold = 160;
+      const open = (window.outerWidth - window.innerWidth) > threshold ||
+                   (window.outerHeight - window.innerHeight) > threshold;
+      if (open && !devtoolsOpen) { devtoolsOpen = true; }
+      if (!open) devtoolsOpen = false;
+    }, 1000);
+
+    // Mensagem de proteção discreta
+    function showProtectMsg() {
+      const el = document.getElementById('protectMsg');
+      if (!el) return;
+      el.classList.add('show');
+      setTimeout(() => el.classList.remove('show'), 2800);
+    }
+
     // ── PROGRESS BAR
     const prog = document.getElementById('progress');
     window.addEventListener('scroll', () => {
