@@ -366,8 +366,41 @@
     .footer__copy, .footer__craft { font-size: 12px; color: rgba(255,255,255,.22); font-weight: 300; }
 
     /* ── WA FLOAT ───────────────────────────────────── */
-    .wa-btn { position: fixed; bottom: 30px; right: 30px; z-index: 300; width: 54px; height: 54px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 28px rgba(37,211,102,.38); transition: transform .3s var(--ease), box-shadow .3s; }
+    .wa-btn { position: fixed; bottom: 96px; right: 28px; z-index: 300; width: 54px; height: 54px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 28px rgba(37,211,102,.38); transition: transform .3s var(--ease), box-shadow .3s; }
     .wa-btn:hover { transform: scale(1.1); box-shadow: 0 10px 36px rgba(37,211,102,.48); }
+    .wa-btn::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid rgba(37,211,102,.4); animation: waPulse 2s ease-out infinite; }
+    @keyframes waPulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.55); opacity: 0; } }
+
+    /* ── MOBILE STICKY BAR ───────────────────────────── */
+    .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 290; background: var(--navy); border-top: 1px solid rgba(255,255,255,.08); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; transform: translateY(100%); transition: transform .4s var(--ease); }
+    .sticky-bar.visible { transform: translateY(0); }
+    .sticky-bar__text { font-size: 13px; color: rgba(255,255,255,.55); font-weight: 300; line-height: 1.4; }
+    .sticky-bar__text strong { color: var(--white); font-weight: 500; display: block; }
+    .sticky-bar__btn { flex-shrink: 0; background: #25D366; color: var(--white); font-size: 13px; font-weight: 600; letter-spacing: .05em; padding: 12px 22px; border-radius: 2px; white-space: nowrap; transition: background .2s; }
+    .sticky-bar__btn:hover { background: #20b85a; }
+    @media (min-width: 901px) { .sticky-bar { display: none; } .wa-btn { bottom: 30px; } }
+
+    /* ── SERVICE BOOK BTN ────────────────────────────── */
+    .svc-book { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--white); font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; padding: 11px 22px; border-radius: 2px; margin-top: 16px; transition: background .2s, transform .2s var(--ease); }
+    .svc-book:hover { background: var(--gold2); transform: translateY(-2px); }
+
+    /* ── URGENCY BANNER ──────────────────────────────── */
+    .urgency { background: linear-gradient(135deg, rgba(184,146,90,.12), rgba(184,146,90,.06)); border: 1px solid rgba(184,146,90,.2); border-radius: 2px; padding: 16px 24px; display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+    .urgency__dot { width: 8px; height: 8px; border-radius: 50%; background: #e8a838; flex-shrink: 0; animation: blink 1.8s ease-in-out infinite; }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+    .urgency__text { font-size: 14px; color: var(--navy); font-weight: 400; }
+    .urgency__text strong { color: var(--gold); }
+
+    /* ── TRUST BADGES ────────────────────────────────── */
+    .trust-badges { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 44px; }
+    .trust-badge { display: flex; align-items: center; gap: 9px; font-size: 13px; color: rgba(255,255,255,.45); font-weight: 300; }
+    .trust-badge svg { opacity: .5; flex-shrink: 0; }
+
+    /* ── POST-TESTIMONIALS CTA ───────────────────────── */
+    .testimonials-cta { margin-top: 56px; padding: 48px; background: var(--cream); border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .testimonials-cta__text h3 { font-family: var(--f-d); font-size: clamp(24px,3vw,36px); font-weight: 300; color: var(--navy); margin-bottom: 8px; }
+    .testimonials-cta__text h3 em { font-style: italic; }
+    .testimonials-cta__text p { font-size: 14px; color: var(--muted); font-weight: 300; }
     .wa-btn svg { width: 24px; height: 24px; }
 
     /* ── SCROLL REVEAL ──────────────────────────────── */
@@ -759,8 +792,18 @@
         <div class="kicker sr" style="--kicker-color:var(--gold2);"><div class="kicker-line"></div><span style="color:var(--gold2);">Agendamento</span></div>
         <h2 class="booking__title sr d1">Pronta para<br />suas unhas<br /><em>impecáveis?</em></h2>
         <p class="booking__text sr d2">Me chame no WhatsApp, escolhemos juntas o serviço e confirmamos o horário. É simples assim.</p>
+        <div class="urgency sr d3" id="urgencyBanner">
+          <div class="urgency__dot"></div>
+          <p class="urgency__text" id="urgencyText">Agenda com <strong>poucos horários disponíveis</strong> nesta semana.</p>
+        </div>
         <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Gostaria%20de%20agendar%20um%20horário.%20Pode%20me%20passar%20a%20disponibilidade%3F" target="_blank" class="booking__cta mag-btn sr d3">Chamar no WhatsApp</a>
         <p class="booking__contact sr d4"><a href="tel:+5561994369704">(61) 9 9436-9704</a> &nbsp;·&nbsp; Terça a Sábado, 08h–18h</p>
+        <div class="trust-badges sr d4">
+          <div class="trust-badge"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5l1.545 3.13 3.455.502-2.5 2.437.59 3.44L8 9.385l-3.09 1.624.59-3.44L3 5.132l3.455-.502L8 1.5z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>Atendimento exclusivo</div>
+          <div class="trust-badge"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 14s-5.5-3.5-5.5-7.5A5.5 5.5 0 0 1 8 1a5.5 5.5 0 0 1 5.5 5.5C13.5 10.5 8 14 8 14z" stroke="currentColor" stroke-width="1"/></svg>Hora marcada garantida</div>
+          <div class="trust-badge"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sinal de apenas R$50</div>
+          <div class="trust-badge"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>Resposta rápida no WhatsApp</div>
+        </div>
       </div>
     </div>
   </section>
@@ -867,6 +910,17 @@
     </div>
   </section>
 
+  <!-- POST-TESTIMONIALS CTA -->
+  <div class="wrap" style="padding-bottom:0;">
+    <div class="testimonials-cta sr">
+      <div class="testimonials-cta__text">
+        <h3>Você pode ser a <em>próxima.</em></h3>
+        <p>Agende seu horário e descubra a diferença de um atendimento que realmente cuida de você.</p>
+      </div>
+      <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Vi%20os%20depoimentos%20no%20site%20e%20adorei.%20Gostaria%20de%20agendar%20um%20horário!" target="_blank" class="btn-primary" style="flex-shrink:0;">Quero agendar agora</a>
+    </div>
+  </div>
+
   <!-- SOCIAL -->
   <section class="social" id="redes">
     <div class="wrap">
@@ -893,6 +947,15 @@
       <div class="footer__bottom"><span class="footer__copy">© 2024 Lorrane Ribeiro Nail Beauty. Todos os direitos reservados.</span><span class="footer__craft">Sobradinho · Brasília, DF</span></div>
     </div>
   </footer>
+
+  <!-- STICKY BAR MOBILE -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sticky-bar__text">
+      <strong>Lorrane Ribeiro Nail Beauty</strong>
+      Agende o seu horário agora
+    </div>
+    <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" class="sticky-bar__btn">Agendar →</a>
+  </div>
 
   <!-- WA FLOAT -->
   <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" class="wa-btn" aria-label="WhatsApp">
@@ -1036,6 +1099,49 @@
     function navLb(dir) { lbCurrent = (lbCurrent + dir + lbImages.length) % lbImages.length; openLb(lbCurrent); }
     document.getElementById('lightbox').addEventListener('click', e => { if (e.target === e.currentTarget) closeLb(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); if (e.key === 'ArrowRight') navLb(1); if (e.key === 'ArrowLeft') navLb(-1); });
+
+    // ── BOTÃO "AGENDAR ESTE SERVIÇO" EM CADA ACCORDION
+    const svcMessages = [
+      'Olá%20Lorrane!%20Tenho%20interesse%20na%20Aplicação%20com%20Esmaltação%20em%20Gel%20(R%24190).%20Poderia%20verificar%20a%20disponibilidade%3F',
+      'Olá%20Lorrane!%20Tenho%20interesse%20na%20Manutenção%20com%20Esmaltação%20em%20Gel%20(R%24160).%20Poderia%20verificar%20a%20disponibilidade%3F',
+      'Olá%20Lorrane!%20Tenho%20interesse%20na%20Aplicação%20Natural%20(R%24160).%20Poderia%20verificar%20a%20disponibilidade%3F',
+      'Olá%20Lorrane!%20Tenho%20interesse%20na%20Manutenção%20Natural%20(R%24130).%20Poderia%20verificar%20a%20disponibilidade%3F',
+      'Olá%20Lorrane!%20Tenho%20interesse%20no%20Banho%20de%20Gel%20%2B%20Blindagem.%20Poderia%20verificar%20a%20disponibilidade%3F',
+      'Olá%20Lorrane!%20Tenho%20interesse%20na%20Manutenção%20Banho%20de%20Gel.%20Poderia%20verificar%20a%20disponibilidade%3F',
+      'Olá%20Lorrane!%20Tenho%20interesse%20na%20Remoção%20(R%2450).%20Poderia%20verificar%20a%20disponibilidade%3F',
+    ];
+    document.querySelectorAll('.service-item').forEach((item, i) => {
+      const content = item.querySelector('.service-item__detail-content');
+      if (!content || !svcMessages[i]) return;
+      const link = document.createElement('a');
+      link.href = `https://wa.me/5561994369704?text=${svcMessages[i]}`;
+      link.target = '_blank';
+      link.className = 'svc-book';
+      link.textContent = 'Quero agendar este serviço →';
+      content.appendChild(link);
+    });
+
+    // ── STICKY BAR MOBILE
+    const stickyBar = document.getElementById('stickyBar');
+    let stickyShown = false;
+    window.addEventListener('scroll', () => {
+      if (!stickyBar) return;
+      const show = window.scrollY > 400;
+      if (show !== stickyShown) { stickyShown = show; stickyBar.classList.toggle('visible', show); }
+    }, { passive: true });
+
+    // ── URGENCY: alterna texto para dar sensação de movimento
+    const urgencyMsgs = [
+      'Agenda com <strong>poucos horários disponíveis</strong> nesta semana.',
+      'Últimas vagas de <strong>sábado</strong> disponíveis.',
+      'Semana quase cheia — <strong>garanta seu horário</strong> com antecedência.',
+    ];
+    const urgencyEl = document.getElementById('urgencyText');
+    if (urgencyEl) {
+      let ui = 0;
+      setInterval(() => { ui = (ui + 1) % urgencyMsgs.length; urgencyEl.style.opacity = '0'; setTimeout(() => { urgencyEl.innerHTML = urgencyMsgs[ui]; urgencyEl.style.opacity = '1'; }, 350); }, 5000);
+      urgencyEl.style.transition = 'opacity .35s';
+    }
   </script>
 </body>
 </html>
