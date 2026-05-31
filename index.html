@@ -89,7 +89,7 @@
     }
     body.cursor-hover .cur-dot { width: 10px; height: 10px; background: var(--gold2); }
     body.cursor-hover .cur-ring { width: 50px; height: 50px; border-color: rgba(184,146,90,.7); }
-    @media (hover: none) { .cur-dot, .cur-ring { display: none; } }
+    @media (hover: none), (max-width: 900px) { .cur-dot, .cur-ring { display: none !important; } }
 
     /* ── LAYOUT ─────────────────────────────────────── */
     .wrap { width: 90%; max-width: 1200px; margin: 0 auto; }
@@ -379,6 +379,7 @@
     .sticky-bar__btn { flex-shrink: 0; background: #25D366; color: var(--white); font-size: 13px; font-weight: 600; letter-spacing: .05em; padding: 12px 22px; border-radius: 2px; white-space: nowrap; transition: background .2s; }
     .sticky-bar__btn:hover { background: #20b85a; }
     @media (min-width: 901px) { .sticky-bar { display: none; } .wa-btn { bottom: 30px; } }
+    @media (max-width: 900px) { .wa-btn { bottom: 82px; right: 16px; width: 48px; height: 48px; } }
 
     /* ── SERVICE BOOK BTN ────────────────────────────── */
     .svc-book { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--white); font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; padding: 11px 22px; border-radius: 2px; margin-top: 16px; transition: background .2s, transform .2s var(--ease); }
@@ -450,7 +451,7 @@
       .gallery__grid { columns: 2; }
       .policies__grid { grid-template-columns: 1fr; }
       .return-row { grid-template-columns: 1fr; }
-      .return-cell--head { padding: 10px 20px; }
+      .return-cell--head { padding: 10px 20px; font-size: 9px; }
       .return-cell { padding: 14px 20px; border-right: none; }
       .hours__grid { grid-template-columns: 1fr; gap: 52px; }
       .hours__right { padding-top: 0; }
@@ -469,10 +470,24 @@
       .gallery__grid { columns: 1; }
       .manifesto__vals { grid-template-columns: 1fr; }
       .experience__grid { grid-template-columns: 1fr; }
-      .service-item__right { display: none; }
+      .service-item__right { display: flex; gap: 12px; } .service-item__price { font-size: 20px; }
       .service-item__name { font-size: 18px; }
       .booking__cta { width: 100%; justify-content: center; }
       .stats__grid { grid-template-columns: repeat(2,1fr); }
+      /* Padding reduzido no mobile */
+      .manifesto, .experience, .services, .gallery, .policies, .booking, .faq, .hours, .testimonials, .social { padding: 72px 0; }
+      .stats { padding: 48px 0; }
+      /* Hero mais compacto */
+      .hero__left { padding: 100px 0 48px; }
+      .hero__meta { margin-top: 32px; padding-top: 24px; gap: 20px; }
+      /* Tabela de prazos mobile */
+      .return-row { grid-template-columns: 1fr; }
+      .return-cell { padding: 10px 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,.05); }
+      .return-cell--head { background: rgba(255,255,255,.04); font-weight: 600; padding: 8px 20px; }
+      /* Trust badges */
+      .trust-badges { gap: 12px; }
+      /* Post testimonials CTA */
+      .testimonials-cta { padding: 32px; flex-direction: column; }
     }
   </style>
 </head>
@@ -760,7 +775,7 @@
           <div class="kicker"><div class="kicker-line"></div><span>Trabalhos</span></div>
           <h2 class="section-title">Cada unha,<br /><em>uma história</em></h2>
         </div>
-        <p style="font-size:13px;color:var(--muted);font-weight:300;max-width:200px;text-align:right;line-height:1.65;">Adicione suas fotos para exibir aqui.</p>
+        <p style="font-size:13px;color:var(--muted);font-weight:300;max-width:200px;text-align:right;line-height:1.65;">Clique para ampliar.</p>
       </div>
       <div class="gallery__grid sr d1">
         <div class="gallery-item" onclick="openLb(0)"><img class="gallery-item__inner" src="fotos/8d7d9222-7315-4cd5-b33d-3ebc45109e61.jpg" alt="Trabalho Lorrane Ribeiro Nail Beauty" /><div class="gallery-item__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
@@ -1217,6 +1232,9 @@
   </script>
 </body>
 </html>
+
+
+
 
 
 
