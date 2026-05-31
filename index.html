@@ -216,6 +216,29 @@
     .service-item__detail-value { font-size: 14px; color: var(--navy); }
     .service-item__detail-note { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.75; max-width: 500px; width: 100%; }
 
+    /* ── PRECOS VISUAIS ─────────────────────────────── */
+    .precos-visuais { padding: 112px 0; background: var(--cream); }
+    .precos-visuais__head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 56px; }
+    .precos-visuais__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .pv-card { display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; background: var(--white); border: 1px solid var(--border); text-decoration: none; transition: transform .3s var(--ease), box-shadow .3s; }
+    .pv-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(27,38,84,.12); }
+    .pv-card__img { position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--cream); }
+    .pv-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+    .pv-card:hover .pv-card__img img { transform: scale(1.05); }
+    .pv-card__info { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-top: 1px solid var(--borderlg); }
+    .pv-card__nome { font-family: var(--f-d); font-size: 17px; font-weight: 400; color: var(--navy); }
+    .pv-card__preco { font-family: var(--f-d); font-size: 22px; font-weight: 300; color: var(--gold); }
+    /* placeholders */
+    .pv-ph { display: block; }
+    .pv-ph-1 { background: linear-gradient(145deg,#cfc6c0,#b0a49c); }
+    .pv-ph-2 { background: linear-gradient(145deg,#c8bdb6,#a89890); }
+    .pv-ph-3 { background: linear-gradient(145deg,#d4cbc4,#b4a89e); }
+    .pv-ph-4 { background: linear-gradient(145deg,#c4bab4,#a09488); }
+    .pv-ph-5 { background: linear-gradient(145deg,#cec5be,#aea29a); }
+    .pv-ph-6 { background: linear-gradient(145deg,#c0b7b0,#9e9288); }
+    @media (max-width: 900px) { .precos-visuais__grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 500px) { .precos-visuais__grid { grid-template-columns: 1fr; } .precos-visuais__head { flex-direction: column; align-items: flex-start; gap: 12px; } }
+
     /* ── GALLERY ────────────────────────────────────── */
     .gallery { padding: 112px 0; background: var(--white); }
     .gallery__head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 56px; }
@@ -892,6 +915,88 @@
           </div>
         </button>
         <div class="service-item__body"><div class="service-item__body-inner"><div class="service-item__detail"><div></div><div class="service-item__detail-content"><div><div class="service-item__detail-label">Duração</div><div class="service-item__detail-value">~30 min</div></div><div><div class="service-item__detail-label">Apenas remoção</div><div class="service-item__detail-value">R$50</div></div><div><div class="service-item__detail-label">Remoção de outra profissional + nova aplicação</div><div class="service-item__detail-value">+ R$20</div></div></div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECOS VISUAIS -->
+  <section class="precos-visuais" id="precos-visuais">
+    <div class="wrap">
+      <div class="precos-visuais__head sr">
+        <div>
+          <div class="kicker"><div class="kicker-line"></div><span>Inspire-se</span></div>
+          <h2 class="section-title">Escolha o seu <em>look</em></h2>
+        </div>
+        <p style="font-size:13px;color:var(--muted);font-weight:300;max-width:220px;text-align:right;line-height:1.65;">Clique em qualquer foto para agendar esse serviço.</p>
+      </div>
+      <div class="precos-visuais__grid sr d1">
+
+        <!-- Card 1 -->
+        <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Vi%20a%20foto%20no%20site%20e%20gostaria%20de%20agendar%20esse%20serviço." target="_blank" class="pv-card">
+          <div class="pv-card__img pv-ph pv-ph-1">
+            <!-- <img src="fotos/preco-1.jpg" alt="Serviço" /> -->
+          </div>
+          <div class="pv-card__info">
+            <span class="pv-card__nome">Serviço</span>
+            <span class="pv-card__preco">R$ —</span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Vi%20a%20foto%20no%20site%20e%20gostaria%20de%20agendar%20esse%20serviço." target="_blank" class="pv-card">
+          <div class="pv-card__img pv-ph pv-ph-2">
+            <!-- <img src="fotos/preco-2.jpg" alt="Serviço" /> -->
+          </div>
+          <div class="pv-card__info">
+            <span class="pv-card__nome">Serviço</span>
+            <span class="pv-card__preco">R$ —</span>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Vi%20a%20foto%20no%20site%20e%20gostaria%20de%20agendar%20esse%20serviço." target="_blank" class="pv-card">
+          <div class="pv-card__img pv-ph pv-ph-3">
+            <!-- <img src="fotos/preco-3.jpg" alt="Serviço" /> -->
+          </div>
+          <div class="pv-card__info">
+            <span class="pv-card__nome">Serviço</span>
+            <span class="pv-card__preco">R$ —</span>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Vi%20a%20foto%20no%20site%20e%20gostaria%20de%20agendar%20esse%20serviço." target="_blank" class="pv-card">
+          <div class="pv-card__img pv-ph pv-ph-4">
+            <!-- <img src="fotos/preco-4.jpg" alt="Serviço" /> -->
+          </div>
+          <div class="pv-card__info">
+            <span class="pv-card__nome">Serviço</span>
+            <span class="pv-card__preco">R$ —</span>
+          </div>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Vi%20a%20foto%20no%20site%20e%20gostaria%20de%20agendar%20esse%20serviço." target="_blank" class="pv-card">
+          <div class="pv-card__img pv-ph pv-ph-5">
+            <!-- <img src="fotos/preco-5.jpg" alt="Serviço" /> -->
+          </div>
+          <div class="pv-card__info">
+            <span class="pv-card__nome">Serviço</span>
+            <span class="pv-card__preco">R$ —</span>
+          </div>
+        </a>
+
+        <!-- Card 6 -->
+        <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Vi%20a%20foto%20no%20site%20e%20gostaria%20de%20agendar%20esse%20serviço." target="_blank" class="pv-card">
+          <div class="pv-card__img pv-ph pv-ph-6">
+            <!-- <img src="fotos/preco-6.jpg" alt="Serviço" /> -->
+          </div>
+          <div class="pv-card__info">
+            <span class="pv-card__nome">Serviço</span>
+            <span class="pv-card__preco">R$ —</span>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
