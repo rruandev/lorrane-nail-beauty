@@ -260,6 +260,35 @@
     #lbPrev { left: 20px; }
     #lbNext { right: 20px; }
 
+    /* ── NOIVAS CAROUSEL ────────────────────────────── */
+    .noivas { background: var(--navy); padding: 96px 0 0; overflow: hidden; }
+    .noivas__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-bottom: 56px; }
+    .noivas__sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,.45); line-height: 1.75; max-width: 380px; margin-top: 12px; }
+    .noivas__cta { flex-shrink: 0; display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(226,203,138,.35); color: var(--gold2); font-size: 12px; font-weight: 400; letter-spacing: .18em; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; transition: all .3s var(--ease); white-space: nowrap; }
+    .noivas__cta:hover { background: var(--gold); border-color: var(--gold); color: var(--white); }
+    .noivas__track-wrap { overflow: hidden; width: 100%; padding-bottom: 64px; }
+    .noivas__track { display: flex; gap: 16px; width: max-content; animation: noivasScroll 28s linear infinite; }
+    .noivas__track:hover { animation-play-state: paused; }
+    @keyframes noivasScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .noiva-card { position: relative; flex-shrink: 0; width: 280px; border-radius: 8px; overflow: hidden; cursor: pointer; }
+    .noiva-card__img { width: 280px; height: 380px; object-fit: cover; display: block; transition: transform .5s var(--ease); }
+    .noiva-card:hover .noiva-card__img { transform: scale(1.04); }
+    .noiva-card__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(27,38,84,.85) 0%, transparent 50%); display: flex; align-items: flex-end; padding: 20px; opacity: 0; transition: opacity .35s; }
+    .noiva-card:hover .noiva-card__overlay { opacity: 1; }
+    .noiva-card__overlay span { font-family: var(--f-d); font-size: 16px; font-style: italic; color: var(--gold2); }
+    /* placeholders */
+    .noiva-ph { display: flex; }
+    .noiva-ph-1 { background: linear-gradient(145deg, #c8bfb8, #a09088); }
+    .noiva-ph-2 { background: linear-gradient(145deg, #d4ccc4, #b0a29a); }
+    .noiva-ph-3 { background: linear-gradient(145deg, #c0b8b0, #9e8e86); }
+    .noiva-ph-4 { background: linear-gradient(145deg, #cac2ba, #a89890); }
+    .noiva-ph-5 { background: linear-gradient(145deg, #beb6ae, #9c8c84); }
+    @media (max-width: 600px) {
+      .noiva-card { width: 220px; }
+      .noiva-card__img { width: 220px; height: 300px; }
+      .noivas__head { flex-direction: column; align-items: flex-start; }
+    }
+
     /* ── POLICIES ───────────────────────────────────── */
     .policies { padding: 112px 0; background: var(--cream); }
     .policies__head { max-width: 540px; margin-bottom: 60px; }
@@ -798,6 +827,69 @@
     </div>
     <button class="lightbox__nav" id="lbNext" onclick="navLb(1)">&#8594;</button>
   </div>
+
+  <!-- NOIVAS CAROUSEL -->
+  <section class="noivas" id="noivas">
+    <div class="noivas__head wrap">
+      <div class="sr">
+        <div class="kicker"><div class="kicker-line" style="background:var(--gold2);"></div><span style="color:var(--gold2);">Coleção exclusiva</span></div>
+        <h2 class="section-title" style="color:var(--white);">Seleção Especial <em>Noivas</em></h2>
+        <p class="noivas__sub">Unhas impecáveis para o dia mais especial da sua vida. Cada detalhe pensado para durar e brilhar.</p>
+      </div>
+      <a href="https://wa.me/5561994369704?text=Olá%20Lorrane!%20Tenho%20interesse%20no%20pacote%20especial%20para%20noivas." target="_blank" class="noivas__cta sr">Agendar para noivas</a>
+    </div>
+
+    <div class="noivas__track-wrap">
+      <div class="noivas__track" id="noivasTrack">
+        <!-- Foto 1 -->
+        <div class="noiva-card">
+          <div class="noiva-card__img noiva-ph noiva-ph-1"></div>
+          <div class="noiva-card__overlay"><span>Aguardando foto</span></div>
+        </div>
+        <!-- Foto 2 -->
+        <div class="noiva-card">
+          <div class="noiva-card__img noiva-ph noiva-ph-2"></div>
+          <div class="noiva-card__overlay"><span>Aguardando foto</span></div>
+        </div>
+        <!-- Foto 3 -->
+        <div class="noiva-card">
+          <div class="noiva-card__img noiva-ph noiva-ph-3"></div>
+          <div class="noiva-card__overlay"><span>Aguardando foto</span></div>
+        </div>
+        <!-- Foto 4 -->
+        <div class="noiva-card">
+          <div class="noiva-card__img noiva-ph noiva-ph-4"></div>
+          <div class="noiva-card__overlay"><span>Aguardando foto</span></div>
+        </div>
+        <!-- Foto 5 -->
+        <div class="noiva-card">
+          <div class="noiva-card__img noiva-ph noiva-ph-5"></div>
+          <div class="noiva-card__overlay"><span>Aguardando foto</span></div>
+        </div>
+        <!-- Duplicado para loop infinito -->
+        <div class="noiva-card">
+          <div class="noiva-card__img noiva-ph noiva-ph-1"></div>
+          <div class="noiva-card__overlay"><span>Aguardando foto</span></div>
+        </div>
+        <div class="noiva-card">
+          <div class="noiva-card__img noiva-ph noiva-ph-2"></div>
+          <div class="noiva-card__overlay"><span>Aguardando foto</span></div>
+        </div>
+        <div class="noiva-card">
+          <div class="noiva-card__img noiva-ph noiva-ph-3"></div>
+          <div class="noiva-card__overlay"><span>Aguardando foto</span></div>
+        </div>
+        <div class="noiva-card">
+          <div class="noiva-card__img noiva-ph noiva-ph-4"></div>
+          <div class="noiva-card__overlay"><span>Aguardando foto</span></div>
+        </div>
+        <div class="noiva-card">
+          <div class="noiva-card__img noiva-ph noiva-ph-5"></div>
+          <div class="noiva-card__overlay"><span>Aguardando foto</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- POLICIES -->
   <section class="policies" id="politicas">
