@@ -87,7 +87,7 @@
     .wrap { width: 90%; max-width: 1200px; margin: 0 auto; }
 
     /* ── NAV ────────────────────────────────────────── */
-    .nav { position: fixed; top: 2px; left: 0; right: 0; z-index: 200; transition: background .4s, box-shadow .4s; }
+    .nav { position: fixed; top: 2px; left: 0; right: 0; z-index: 200; background: rgba(27,38,84,.98); backdrop-filter: blur(20px); transition: background .4s, box-shadow .4s; }
     .nav.solid { background: rgba(13,31,45,.96); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(255,255,255,.05); }
     .nav__bar { display: flex; align-items: center; justify-content: space-between; height: 70px; }
     .nav__logo { font-family: var(--f-d); font-size: 17px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; color: var(--white); }
@@ -551,7 +551,7 @@
   <nav class="nav" id="nav">
     <div class="wrap">
       <div class="nav__bar">
-        <a href="#inicio" class="nav__logo"><img src="fotos/logo.jpg" alt="Lorrane Ribeiro Nail Beauty" style="height:64px;width:64px;object-fit:contain;mix-blend-mode:screen;" /></a>
+        <a href="#inicio" class="nav__logo"><img src="fotos/logo.jpg" alt="Lorrane Ribeiro Nail Beauty" style="height:60px;width:60px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.1);" /></a>
         <ul class="nav__links">
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#servicos">Serviços</a></li>
@@ -1488,6 +1488,7 @@
   </script>
 </body>
 </html>
+
 
 
 
