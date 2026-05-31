@@ -89,7 +89,7 @@
     }
     body.cursor-hover .cur-dot { width: 10px; height: 10px; background: var(--gold2); }
     body.cursor-hover .cur-ring { width: 50px; height: 50px; border-color: rgba(184,146,90,.7); }
-    @media (hover: none), (max-width: 900px) { .cur-dot, .cur-ring { display: none !important; } }
+    @media (hover: none), (max-width: 900px) { .cur-dot, .cur-ring { display: none !important; opacity: 0 !important; pointer-events: none !important; } }
 
     /* ── LAYOUT ─────────────────────────────────────── */
     .wrap { width: 90%; max-width: 1200px; margin: 0 auto; }
@@ -379,7 +379,7 @@
     .sticky-bar__btn { flex-shrink: 0; background: #25D366; color: var(--white); font-size: 13px; font-weight: 600; letter-spacing: .05em; padding: 12px 22px; border-radius: 2px; white-space: nowrap; transition: background .2s; }
     .sticky-bar__btn:hover { background: #20b85a; }
     @media (min-width: 901px) { .sticky-bar { display: none; } .wa-btn { bottom: 30px; } }
-    @media (max-width: 900px) { .wa-btn { bottom: 82px; right: 16px; width: 48px; height: 48px; } }
+    @media (max-width: 900px) { .wa-btn { display: none; } }
 
     /* ── SERVICE BOOK BTN ────────────────────────────── */
     .svc-book { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--white); font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; padding: 11px 22px; border-radius: 2px; margin-top: 16px; transition: background .2s, transform .2s var(--ease); }
@@ -1232,6 +1232,7 @@
   </script>
 </body>
 </html>
+
 
 
 
