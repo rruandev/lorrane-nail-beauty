@@ -88,10 +88,12 @@
 
     /* ── NAV ────────────────────────────────────────── */
     .nav { position: fixed; top: 2px; left: 0; right: 0; z-index: 200; background: rgba(27,38,84,.98); backdrop-filter: blur(20px); transition: background .4s, box-shadow .4s; }
-    .nav.solid { background: rgba(13,31,45,.96); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(255,255,255,.05); }
+    .nav.solid { background: rgba(27,38,84,.98); backdrop-filter: blur(20px); box-shadow: none; }
     .nav__bar { display: flex; align-items: center; justify-content: space-between; height: 70px; }
     .nav__logo { font-family: var(--f-d); font-size: 17px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; color: var(--white); }
     .nav__logo em { font-style: italic; font-weight: 300; color: var(--gold2); }
+    .nav__tagline { font-family: var(--f-d); font-size: 13px; font-style: italic; font-weight: 300; color: rgba(255,255,255,.45); line-height: 1.4; border-left: 1px solid rgba(255,255,255,.12); padding-left: 16px; }
+    @media (max-width: 900px) { .nav__tagline { display: none; } }
     .nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav__links a { font-size: 12px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.55); transition: color .2s; }
     .nav__links a:hover { color: var(--gold2); }
@@ -551,7 +553,10 @@
   <nav class="nav" id="nav">
     <div class="wrap">
       <div class="nav__bar">
-        <a href="#inicio" class="nav__logo"><img src="fotos/logo.png"  alt="Lorrane Ribeiro Nail Beauty" style="height:68px;width:auto;object-fit:contain;" /></a>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <a href="#inicio" class="nav__logo"><img src="fotos/logo.png" alt="Lorrane Ribeiro Nail Beauty" style="height:68px;width:auto;object-fit:contain;" /></a>
+          <span class="nav__tagline">A arte do cuidado.<br>A essência da durabilidade.</span>
+        </div>
         <ul class="nav__links">
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#servicos">Serviços</a></li>
@@ -927,7 +932,6 @@
           <div class="kicker"><div class="kicker-line"></div><span>Inspire-se</span></div>
           <h2 class="section-title">Seu próximo look<br /><em>começa aqui</em></h2>
         </div>
-        <p style="font-size:13px;color:var(--muted);font-weight:300;max-width:220px;text-align:right;line-height:1.65;">Clique em qualquer foto para agendar esse serviço.</p>
       </div>
       <div class="precos-visuais__grid sr d1">
 
